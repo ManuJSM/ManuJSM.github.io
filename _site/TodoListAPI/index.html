@@ -9,7 +9,7 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>TodoListDocumentation(En Desarrollo) - ManuJSM.github.io</title>
+<!-- begin _includes/seo.html --><title>TodoListDocumentation - ManuJSM.github.io</title>
 <meta name="description" content="Esta es la documentación de la API que estoy desarrollando en .NET">
 
 
@@ -17,15 +17,13 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="es_ES">
 <meta property="og:site_name" content="ManuJSM.github.io">
-<meta property="og:title" content="TodoListDocumentation(En Desarrollo)">
+<meta property="og:title" content="TodoListDocumentation">
 <meta property="og:url" content="http://localhost:4000/TodoListAPI/">
 
 
   <meta property="og:description" content="Esta es la documentación de la API que estoy desarrollando en .NET">
 
 
-
-  <meta property="og:image" content="http://localhost:4000/assets/images/API.png">
 
 
 
@@ -164,7 +162,7 @@
         <span class="sep">/</span>
       
       
-        <li class="current">TodoListDocumentation(En Desarrollo)</li>
+        <li class="current">TodoListDocumentation</li>
       
     
   </ol>
@@ -292,7 +290,7 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="TodoListDocumentation(En Desarrollo)">
+    <meta itemprop="headline" content="TodoListDocumentation">
     <meta itemprop="description" content="Esta es la documentación de la API que estoy desarrollando en .NET">
     <meta itemprop="datePublished" content="December 12, 2023">
     
@@ -300,7 +298,7 @@
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">TodoListDocumentation(En Desarrollo)
+          <h1 id="page-title" class="page__title" itemprop="headline">TodoListDocumentation
 </h1>
           
         </header>
@@ -349,7 +347,7 @@
 |-- Interfaces/
 </code></pre></div></div>
 
-<h2 id="usage-examples">Usage Examples</h2>
+<h2 id="controlador-de-listas">Controlador De Listas</h2>
 <h3 id="get-all-lists">Get ALL Lists</h3>
 
 <p>Muestra Todas las listas de tareas que Existen</p>
@@ -391,6 +389,109 @@ listas anteriores</p>
 <p><strong>Content</strong> : <code class="language-plaintext highlighter-rouge">{[]}</code></p>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Comprar"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Chocolate"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isCompleted"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pan"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isCompleted"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Patatas"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isCompleted"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="createtodolist">CreateTodoList</h3>
+
+<p>Crea una lista de Tareas con un titulo dado.</p>
+
+<p><strong>URL</strong> : <code class="language-plaintext highlighter-rouge">/api/TodoList/</code></p>
+
+<p><strong>Method</strong> : <code class="language-plaintext highlighter-rouge">POST</code></p>
+
+<p><strong>Data constraints</strong></p>
+
+<p>La lista necesita un Nombre para ser almacenada en la base de datos</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"Title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"String"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p><strong>Data example</strong></p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Comprar"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="success-responses-2">Success Responses</h3>
+
+<p><strong>Code</strong> : <code class="language-plaintext highlighter-rouge">201 Created</code></p>
+
+<p><strong>Content</strong> : <code class="language-plaintext highlighter-rouge">{[]}</code></p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Comprar"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div></div>
+<h3 id="deletelist">DeleteList</h3>
+
+<p>Borra una Lista con todos sus items dado el Id de la lista.</p>
+
+<p><strong>URL</strong> : <code class="language-plaintext highlighter-rouge">/api/TodoList/{id}</code></p>
+
+<p><strong>Method</strong> : <code class="language-plaintext highlighter-rouge">DELETE</code></p>
+
+<h3 id="success-response">Success Response</h3>
+
+<p><strong>Condition</strong> : Si la lista existe.</p>
+
+<p><strong>Code</strong> : <code class="language-plaintext highlighter-rouge">204 NO CONTENT</code></p>
+
+<h3 id="error-responses">Error Responses</h3>
+
+<p><strong>Condition</strong> : Si no hay una lista con este Id.</p>
+
+<p><strong>Code</strong> : <code class="language-plaintext highlighter-rouge">404 NOT FOUND</code></p>
+
+<h3 id="update">Update</h3>
+
+<p>Actualiza una Lista entera</p>
+
+<p><strong>URL</strong> : <code class="language-plaintext highlighter-rouge">/api/TodoList/{id}</code></p>
+
+<p><strong>Method</strong> : <code class="language-plaintext highlighter-rouge">PUT</code></p>
+
+<p><strong>Data constraints</strong></p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"String"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"String"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isCompleted"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bool"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p><strong>Data example</strong></p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Comprar"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
@@ -408,6 +509,180 @@ listas anteriores</p>
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
+
+<h3 id="success-response-1">Success Response</h3>
+
+<p><strong>Condition</strong> : Si la lista existe.</p>
+
+<p><strong>Code</strong> : <code class="language-plaintext highlighter-rouge">200 OK</code></p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Comprar"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Chocolate"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isCompleted"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pan"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isCompleted"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Patatas"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isCompleted"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="error-responses-1">Error Responses</h3>
+
+<p><strong>Condition</strong> : Si no hay una lista con este Id.</p>
+
+<p><strong>Code</strong> : <code class="language-plaintext highlighter-rouge">404 NOT FOUND</code></p>
+
+<p><strong>Content</strong> : <code class="language-plaintext highlighter-rouge">{}</code></p>
+
+<h2 id="controlador-de-items">Controlador De Items</h2>
+
+<h3 id="addtolist">AddToList</h3>
+
+<p>Añade un elemento a la lista con el id dado</p>
+
+<p><strong>URL</strong> : <code class="language-plaintext highlighter-rouge">/api/TodoItem/{id}</code></p>
+
+<p><strong>Method</strong> : <code class="language-plaintext highlighter-rouge">POST</code></p>
+
+<p><strong>Data constraints</strong></p>
+
+<p>El nuevo elemento necesita un Nombre para ser almacenado.</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"Title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"String"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p><strong>Data example</strong></p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"filete de pollo"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="success-response-2">Success Response</h3>
+
+<p><strong>Condition</strong> : Si la lista existe se crea un nuevo elemento y llama al controlador de Lista para mostrar toda la lista actualizada con el nuevo elemento, el campo isCompleted sera puesto automaticamente a falso.</p>
+
+<p><strong>Code</strong> : <code class="language-plaintext highlighter-rouge">201 Created</code></p>
+
+<p><strong>Content</strong> : <code class="language-plaintext highlighter-rouge">{[]}</code></p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Comprar"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Chocolate"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isCompleted"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pan"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isCompleted"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Patatas"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isCompleted"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"filete de pollo"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isCompleted"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="error-responses-2">Error Responses</h3>
+
+<p><strong>Condition</strong> : Si no hay una lista con este Id.</p>
+
+<p><strong>Code</strong> : <code class="language-plaintext highlighter-rouge">404 NOT FOUND</code></p>
+
+<h3 id="deleteitem">DeleteItem</h3>
+
+<p>Borra un Item de la lista sabiendo el ID de ese Item</p>
+
+<p><strong>URL</strong> : <code class="language-plaintext highlighter-rouge">/api/TodoItem/{id}</code></p>
+
+<p><strong>Method</strong> : <code class="language-plaintext highlighter-rouge">DELETE</code></p>
+
+<h3 id="success-response-3">Success Response</h3>
+
+<p><strong>Condition</strong> : Si el elemento existe.</p>
+
+<p><strong>Code</strong> : <code class="language-plaintext highlighter-rouge">204 NO CONTENT</code></p>
+
+<h3 id="error-responses-3">Error Responses</h3>
+
+<p><strong>Condition</strong> : Si no hay un elemento con este Id.</p>
+
+<p><strong>Code</strong> : <code class="language-plaintext highlighter-rouge">404 NOT FOUND</code></p>
+
+<h3 id="updateitem">UpdateItem</h3>
+
+<p>Actualiza un elemento concreto dado su Id</p>
+
+<p><strong>URL</strong> : <code class="language-plaintext highlighter-rouge">/api/TodoItem/{id}</code></p>
+
+<p><strong>Method</strong> : <code class="language-plaintext highlighter-rouge">PUT</code></p>
+
+<p><strong>Data constraints</strong></p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"String"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"isCompleted"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bool"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+  
+</span></code></pre></div></div>
+
+<p><strong>Data example</strong></p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lavar las sábanas"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"isCompleted"</span><span class="p">:</span><span class="w"> </span><span class="s2">"True"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+  
+</span></code></pre></div></div>
+
+<h3 id="success-response-4">Success Response</h3>
+
+<p><strong>Condition</strong> : Si la lista existe.</p>
+
+<p><strong>Code</strong> : <code class="language-plaintext highlighter-rouge">200 OK</code></p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lavar las sábanas"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"isCompleted"</span><span class="p">:</span><span class="w"> </span><span class="s2">"True"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="error-responses-4">Error Responses</h3>
+
+<p><strong>Condition</strong> : Si no hay un Item con ese Id</p>
+
+<p><strong>Code</strong> : <code class="language-plaintext highlighter-rouge">404 NOT FOUND</code></p>
+
+<p><strong>Content</strong> : <code class="language-plaintext highlighter-rouge">{}</code></p>
 
         
       </section>
